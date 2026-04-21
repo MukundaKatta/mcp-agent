@@ -28,6 +28,19 @@ uvx mcp-agent login
 
 The CLI opens a browser window so you can sign in with GitHub or Google and generate an API key. Credentials are cached under `~/.mcp-agent/credentials.json`. In CI, set the `MCP_API_KEY` environment variable instead.
 
+If you need to deploy from another shell, machine, or CI runner, you can use the same key with either:
+
+```bash
+uvx mcp-agent deploy my-agent --api-key "$MCP_API_KEY"
+```
+
+or:
+
+```bash
+export MCP_API_KEY=lm_mcp_api_...
+uvx mcp-agent deploy my-agent
+```
+
 ## 2. Confirm your project layout
 
 Minimal structure:
