@@ -161,7 +161,7 @@ uvx mcp-agent login
 uvx mcp-agent deploy
 ```
 
-`uvx mcp-agent login` opens a browser so you can sign in and generate an API key for cloud deployments. The CLI stores that key locally so later `deploy`, `cloud`, and `install` commands can reuse it automatically. If you are deploying from CI or another non-interactive environment, set `MCP_API_KEY` instead or pass `--api-key` directly to `uvx mcp-agent deploy`.
+`uvx mcp-agent login` opens a browser so you can sign in and generate an API key for cloud deployments. The CLI stores that key under `~/.mcp-agent/` so later `deploy`, `cloud`, and `install` commands can reuse it automatically. If you are deploying from CI or another non-interactive environment, set `MCP_API_KEY` instead or pass `--api-key` directly to `uvx mcp-agent deploy`.
 
 ## Next steps
 

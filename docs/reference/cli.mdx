@@ -34,7 +34,14 @@ uvx mcp-agent login
 | `--api-key TEXT` | Provide an existing API key (also reads `MCP_API_KEY`). |
 | `--no-open` | Prevent the CLI from opening a browser tab during login. |
 
-After authenticating, `uvx mcp-agent cloud auth whoami` confirms the active account (use `uv run mcp-agent …` if you prefer to stay inside your project environment). Run `uvx mcp-agent cloud auth logout` to clear stored credentials.
+After authenticating, the CLI stores credentials under `~/.mcp-agent/`. `uvx mcp-agent cloud auth whoami` confirms the active account (use `uv run mcp-agent …` if you prefer to stay inside your project environment). Run `uvx mcp-agent cloud auth logout` to clear stored credentials.
+
+If you prefer not to rely on stored credentials, set `MCP_API_KEY` or pass `--api-key` when deploying:
+
+```bash
+export MCP_API_KEY=<your-api-key>
+uvx mcp-agent deploy research-agent
+```
 
 ### Initialise a project (`mcp-agent init`)
 

@@ -39,7 +39,16 @@ With that context, the steps below show exactly how to deploy.
 uvx mcp-agent login
 ```
 
-The CLI opens the Cloud dashboard so you can generate an API token. Credentials are stored under `~/.mcp-agent/`.
+The CLI opens the Cloud dashboard so you can generate an API token. Credentials are stored under `~/.mcp-agent/`, so later `deploy`, `cloud`, and `install` commands can reuse them automatically.
+
+If you want to deploy from CI or another non-interactive environment, set `MCP_API_KEY` or pass `--api-key` directly:
+
+```bash
+export MCP_API_KEY=<your-api-key>
+uvx mcp-agent deploy my-agent
+# or
+uvx mcp-agent deploy my-agent --api-key <your-api-key>
+```
 
 ## 2. Deploy
 

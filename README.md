@@ -673,6 +673,8 @@ uvx mcp-agent deploy my-agent
 uvx mcp-agent cloud apps list
 ```
 
+`uvx mcp-agent login` stores your Cloud credential under `~/.mcp-agent/`. If you are deploying from CI or another non-interactive environment, set `MCP_API_KEY` or pass `--api-key` to `uvx mcp-agent deploy`.
+
 Docs: [Cloud overview](https://docs.mcp-agent.com/cloud/overview) • [Deployment quickstart](https://docs.mcp-agent.com/cloud/deployment-quickstart) • Examples: [`examples/cloud`](./examples/cloud/).
 
 ## Examples
@@ -714,7 +716,7 @@ You can use mcp-agent applications in a standalone fashion (i.e. they aren't par
 
 ### How do I deploy to Cloud?
 
-Run `uvx mcp-agent deploy <app-name>` after logging in with `uvx mcp-agent login`. The CLI packages your project, provisions secrets, and exposes an MCP endpoint backed by a durable Temporal runtime. See the [Cloud quickstart](https://docs.mcp-agent.com/get-started/
+Run `uvx mcp-agent deploy <app-name>` after logging in with `uvx mcp-agent login`. That login flow stores credentials under `~/.mcp-agent/`, so later deploys can reuse them automatically. If you prefer, you can also set `MCP_API_KEY` or pass `--api-key` directly to the deploy command. The CLI packages your project, provisions secrets, and exposes an MCP endpoint backed by a durable Temporal runtime. See the [Cloud quickstart](https://docs.mcp-agent.com/get-started/
 cloud) for step-by-step screenshots and CLI output.
 
 ### Where is the API reference?
