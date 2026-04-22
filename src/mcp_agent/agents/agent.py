@@ -1550,6 +1550,12 @@ class AgentTasks:
                             capability,
                         )
                         continue
+                    if capability is None:
+                        logger.warning(
+                            "Failed to get capabilities for server '%s': no capabilities returned",
+                            name,
+                        )
+                        continue
                     server_capabilities[name] = capability
             else:
                 # If a server name is provided, get capabilities for that server
