@@ -1192,6 +1192,7 @@ def mcp_content_to_openai_content_part(
 def mcp_content_to_openai_message_content(
     content: TextContent | ImageContent | EmbeddedResource,
 ) -> str | list[ChatCompletionContentPartParam]:
+    """Convert a single MCP content item into OpenAI chat message content."""
     if isinstance(content, TextContent):
         return content.text
     if isinstance(content, EmbeddedResource) and isinstance(
@@ -1204,6 +1205,7 @@ def mcp_content_to_openai_message_content(
 def mcp_contents_to_openai_tool_result(
     contents: Iterable[TextContent | ImageContent | EmbeddedResource],
 ) -> str:
+    """Convert MCP tool result content into the string payload OpenAI expects."""
     parts: list[str] = []
     for content in contents:
         if isinstance(content, TextContent):
